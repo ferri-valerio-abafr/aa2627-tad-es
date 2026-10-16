@@ -26,7 +26,7 @@ Una volta sola, all'inizio del corso. I primi due passaggi si fanno **sul sito d
    Dare alla copia il nome `aa2627-tad-es`, lasciarla *Public* e premere *Create repository*. È un repository indipendente e resta sul proprio profilo.
 2. **Attivare GitHub Pages**, che pubblica i lavori in rete: \
    *Settings* (in alto a destra) *› Pages › Source: Deploy from a branch › main › / (root) › Save* \
-   Dopo un minuto circa, in cima alla stessa pagina dovrebbe comparire l'indirizzo pubblico del proprio sito, «Your site is live at…».
+   Controllare che in cima alla stessa pagina compaia l'indirizzo «Your site is live at…». Il sito e ogni esercitazione saranno raggiungibili con indirizzi come `https://NOMEUTENTE.github.io/aa2627-tad-es/es1/`. Prima di inviare un indirizzo, aprirlo nel browser e verificare che non dia errore 404.
 3. **Scaricare il repository sul proprio computer.** \
    Su GitHub si copia l'indirizzo del repository appena creato: \
    *Code* (sezione) *› Code* (pulsante verde) *› HTTPS ›* icona della copia. \
@@ -53,7 +53,7 @@ Da qui in avanti si lavora **in Visual Studio Code**, nella cartella scaricata s
    Si scrive un messaggio che dica che cosa è stato fatto, si preme *Commit* e poi *Sincronizza*.
    > Il messaggio non è facoltativo: senza, il pulsante *Commit* non conclude niente, ed è il motivo per cui a volte sembra che non funzioni. Bastano poche parole, come «prima versione di es1» o «colori più scuri e sfondo nero».
 
-Dopo circa un minuto il lavoro è online all'indirizzo `https://ferri-valerio-abafr.github.io/aa2627-tad-es/es1/`, con la cartella giusta al posto di `es1`.
+Dopo circa un minuto il lavoro dovrebbe essere online all'indirizzo `https://ferri-valerio-abafr.github.io/aa2627-tad-es/es1/`, con la cartella giusta al posto di `es1`. Verificare l'indirizzo nel browser: il commit e la sincronizzazione da soli non attivano GitHub Pages.
 
 Le cartelle si chiamano `es1`, `es2` e così via: sono gli stessi nomi delle consegne sul sito, e non sono nomi liberi, perché su quelli si costruiscono l'indirizzo del lavoro pubblicato e il collegamento con la consegna.
 
@@ -62,7 +62,7 @@ Le cartelle si chiamano `es1`, `es2` e così via: sono gli stessi nomi delle con
 Il primo passaggio si fa **in Visual Studio Code**, il secondo **nel browser**.
 
 1. **Pubblicare il lavoro e ottenerne l'indirizzo**, con il comando `/consegna es1`. \
-   Controlla che la cartella sia completa; se è tutto a posto, fa il commit e la sincronizzazione, e mostra l'indirizzo pubblico da segnalare, altrimenti chiede la conferma per proseguire comunque.
+   Controlla che la cartella sia completa; se è tutto a posto, fa il commit e la sincronizzazione, poi verifica che l'indirizzo pubblico si apra. Se GitHub Pages non è attivo o l'indirizzo restituisce 404, indica come attivarlo da *Settings › Pages* e non presentare il link come già funzionante.
 2. **Compilare il [modulo delle consegne](https://docs.google.com/forms/d/e/1FAIpQLSe3wKbZj7PfOUy5IzgyU52e81S9aKXqTJ7kRxIzhPrDiBH10Q/viewform?usp=pp_url&entry.1318995029=TAD+2026/27)**: \
    l'esercitazione, cognome e nome, l'indirizzo appena mostrato dal comando ed eventuali note.
 
