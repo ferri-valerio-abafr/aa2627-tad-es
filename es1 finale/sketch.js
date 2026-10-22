@@ -5,8 +5,7 @@
 // Parametri critici:
 // passoOrizzontale e passoVerticale: distanza fra i centri
 // spessoreFascia: distanza fra gli anelli
-// centroXDiscoInMovimento e centroYDiscoInMovimento: posizione del disco animato
-// ampiezzaMovimento: spostamento massimo del disco animato
+// ampiezzaMovimento: spostamento massimo dei centri
 // velocitaMovimento: velocità dello spostamento
 
 const larghezzaTela = 800;
@@ -14,10 +13,8 @@ const altezzaTela = 600;
 const passoOrizzontale = 150;
 const passoVerticale = 130;
 const spessoreFascia = 5;
-const centroXDiscoInMovimento = 450;
-const centroYDiscoInMovimento = 260;
-const ampiezzaMovimento = 8;
-const velocitaMovimento = 0.02;
+const ampiezzaMovimento = 14;
+const velocitaMovimento = 0.04;
 const raggioMassimo = 100;
 
 function setup() {
@@ -31,20 +28,21 @@ function draw() {
 
   for (let y = -passoVerticale; y <= height + passoVerticale; y += passoVerticale) {
     const sfalsamento = (round(y / passoVerticale) % 2) * passoOrizzontale / 2;
+    const indiceRiga = round(y / passoVerticale);
 
     for (let x = -passoOrizzontale; x <= width + passoOrizzontale; x += passoOrizzontale) {
       const centroX = x + sfalsamento;
-      const spostamento = centroX === centroXDiscoInMovimento && y === centroYDiscoInMovimento
-        ? sin(frameCount * velocitaMovimento) * ampiezzaMovimento
-        : 0;
-      const centroXAnimato = centroX + spostamento;
+      const indiceColonna = round(centroX / passoOrizzontale);
+      const fase = indiceRiga * 1.3 + indiceColonna * 0.8;
+      const spostamentoX = sin(frameCount * velocitaMovimento + fase) * ampiezzaMovimento;
+      const spostamentoY = sin(frameCount * velocitaMovimento + fase + HALF_PI) * ampiezzaMovimento / 2;
       let numeroAnello = 0;
 
       for (let raggio = spessoreFascia / 2; raggio <= raggioMassimo; raggio += spessoreFascia) {
         const anelloNero = numeroAnello % 2 === 0;
         stroke(anelloNero ? 20 : 255);
         strokeWeight(spessoreFascia);
-        circle(centroXAnimato, y, raggio * 2);
+        circle(centroX + spostamentoX, y + spostamentoY, raggio * 2);
         numeroAnello++;
       }
     }
