@@ -5,7 +5,8 @@
 // Parametri critici:
 // passoOrizzontale e passoVerticale: distanza fra i centri
 // spessoreFascia: distanza fra gli anelli
-// ampiezzaMovimento: spostamento massimo del reticolo
+// centroXDiscoInMovimento e centroYDiscoInMovimento: posizione del disco animato
+// ampiezzaMovimento: spostamento massimo del disco animato
 // velocitaMovimento: velocità dello spostamento
 
 const larghezzaTela = 800;
@@ -13,6 +14,8 @@ const altezzaTela = 600;
 const passoOrizzontale = 150;
 const passoVerticale = 130;
 const spessoreFascia = 5;
+const centroXDiscoInMovimento = 450;
+const centroYDiscoInMovimento = 260;
 const ampiezzaMovimento = 8;
 const velocitaMovimento = 0.02;
 const raggioMassimo = 100;
@@ -24,21 +27,24 @@ function setup() {
 function draw() {
   background(255);
 
-  const spostamento = sin(frameCount * velocitaMovimento) * ampiezzaMovimento;
   noFill();
 
   for (let y = -passoVerticale; y <= height + passoVerticale; y += passoVerticale) {
     const sfalsamento = (round(y / passoVerticale) % 2) * passoOrizzontale / 2;
 
     for (let x = -passoOrizzontale; x <= width + passoOrizzontale; x += passoOrizzontale) {
-      const centroX = x + sfalsamento + spostamento;
+      const centroX = x + sfalsamento;
+      const spostamento = centroX === centroXDiscoInMovimento && y === centroYDiscoInMovimento
+        ? sin(frameCount * velocitaMovimento) * ampiezzaMovimento
+        : 0;
+      const centroXAnimato = centroX + spostamento;
       let numeroAnello = 0;
 
       for (let raggio = spessoreFascia / 2; raggio <= raggioMassimo; raggio += spessoreFascia) {
         const anelloNero = numeroAnello % 2 === 0;
         stroke(anelloNero ? 20 : 255);
         strokeWeight(spessoreFascia);
-        circle(centroX, y, raggio * 2);
+        circle(centroXAnimato, y, raggio * 2);
         numeroAnello++;
       }
     }
