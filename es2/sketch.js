@@ -1,6 +1,7 @@
-// Riferimento: Max Bill, opera mostrata nell'immagine principale della fonte.
-// Titolo e anno dell'opera non sono indicati nell'articolo.
+// Riferimento: Max Bill, una litografia del portfolio "10 original-lithos", 1941.
 // Fonte: https://blog.ilgiornale.it/franza/2026/04/14/max-bill-1908-1994-e-la-grammatica-della-bellezza-al-m-a-x-museo-di-chiasso-e-lesposizione-piu-vasta-tenutasi-in-canton-ticino-su-una-colonna-dellarte-del-novec/
+// Il portfolio e l'anno sono confermati dal catalogo Koller:
+// https://www.kollerauktionen.ch/fr/328654-0067-1181-MAX-BILL.-10-original-lithos.-1181_439070.html?RecPos=18
 // Regola: tessere poligonali di misure diverse formano una vetrata astratta.
 // Interazione: il mouse deforma e ricolora una tessera; i bordi condivisi muovono le vicine.
 
